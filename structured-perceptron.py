@@ -8,6 +8,7 @@ from collections import Counter, defaultdict
 from operator import itemgetter
 import numpy as np
 
+seed(0)
 
 class Structured_Perceptron(SequenceModel):
     def __init__(self, epoch:int=1):
@@ -52,8 +53,6 @@ class Structured_Perceptron(SequenceModel):
         pred_labels = []
         train_data= list(train_data)
         self.set_parameters(train_data)
-        seed(0)
-        shuffle(train_data)
         #scale = 0
         for i in range(self.epoch):
             shuffle(train_data)
